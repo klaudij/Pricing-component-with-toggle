@@ -1,0 +1,315 @@
+/* CSS Document */
+*,
+*::after,
+*::before {
+  background-repeat: no-repeat;
+  margin: 0;
+  box-sizing: border-box;
+  transition: 0.5s;
+}
+
+/**********************/
+/******* COMMON *******/
+/**********************/
+body {
+    background-color: hsl(240, 78%, 98%);
+    font-family: 'Montserrat', sans-serif;
+    background-image: url(images/bg-top.svg);
+    background-position: right -150px top -30px;
+    background-size: 80%;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+h1{
+  margin-top: 70px;
+  color:hsl(233, 13%, 49%);
+  font-size: 1.9em;
+}
+
+h2 {
+  color:hsl(233, 13%, 49%);
+  font-size: 1.1em;
+}
+
+
+
+main .toggle {
+  margin-top: 45px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: hsl(234, 14%, 74%);
+}
+
+
+/**********************/
+/******* SLIDER *******/
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  margin: 0 20px;
+}
+
+.switch:hover{
+  opacity: 0.6;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: linear-gradient(90deg, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-image: linear-gradient(90deg, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+
+
+/**********************/
+/******* CARDS *******/
+main .options{
+  margin: 60px 0 10px 0;
+}
+
+main .card {
+  background-color: white;
+  text-align: center;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+  border-radius: 10px;
+  padding:40px 25px 30px 25px;
+  margin: 0 25px 30px 25px;
+  width: 325px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+
+}
+
+main .card h2{
+  margin-bottom: 40px;
+}
+
+main .card .month{
+  display: none;
+}
+
+main .card .ammount{
+  color: hsl(232, 13%, 33%);
+  font-size: 4em;
+
+  margin-bottom: 36px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+main .card .ammount span:first-child{
+  font-size: 0.6em;
+}
+
+
+main .card table {
+  width: 268px;
+  margin-bottom: 31px;
+  border-collapse: collapse;
+  
+  
+}
+
+main .card table td{
+  padding: 20px;
+  border-top: 1px solid hsl(234, 14%, 74%);
+  border-bottom: 1px solid hsl(234, 14%, 74%);
+  color: hsl(233, 13%, 49%);
+  font-size: 15px;
+
+}
+
+main .card button {
+  width: 268px;
+  border: none;
+  padding: 15px 0;
+  border-radius: 5px;
+  transition: 0.5s;
+
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 14px;
+  color: white;
+  background-image: linear-gradient(90deg, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+}
+
+main .card button:hover{
+  cursor: pointer;
+  border: 1px solid hsl(237, 63%, 64%);
+  background-image: linear-gradient(90deg, white, white);
+  color: hsl(237, 63%, 64%);
+  transition: 0.5s;
+  
+}
+
+
+main .professional{
+  color: white;
+  background-image: linear-gradient(90deg, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+}
+
+main .professional h2{
+  color: white;
+}
+
+main .professional .ammount{
+  color: white;
+}
+
+main .professional table td{
+  color: white;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+
+}
+
+main .professional button{
+  color: hsl(237, 63%, 64%);
+  background-image: linear-gradient(90deg, white, white);
+  transition: 0.5s;
+}
+
+main .professional button:hover{
+  cursor: pointer;
+  border: 1px solid white;
+  background-image: linear-gradient(90deg, hsl(237, 63%, 64%), hsl(237, 63%, 64%));
+  color: white;
+  transition: 0.5s;
+  
+}
+
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+
+/***************************/
+/******* MEDIA QUERY *******/
+/***************************/
+
+@media screen and (min-width: 600px){
+  body{
+    background-position: right -150px top -30px;
+    background-size: 50%;
+  }
+}
+
+
+@media screen and (min-width: 1439px) {
+
+  body{
+    background-image: url(images/bg-top.svg), url(images/bg-bottom.svg);
+    background-position: right top 0px, bottom left;
+    background-size:340px , 380px;
+    background-attachment: fixed;
+  }
+
+  main .options{
+    position: relative;
+    width: 1100px;
+    height: 530px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  main .card {
+    margin: 0;
+    width: 350px;
+
+  }
+
+  main .card p {
+    font-size: 4.5em;
+  }
+
+  main .card table {
+    width: 290px;
+  }
+  main .card button{
+    width: 290px;
+    font-size: 15px;
+  }
+  main .basic {
+    position: absolute;
+    left: 25px;
+
+  }
+
+  main .professional{
+    z-index: 999;
+    width: 360px;
+    position: absolute;
+    left: 34%;
+    top:-20px;
+    bottom: 0;
+  
+  }
+
+  main .master {
+    position: absolute;
+    right: 18px;
+  }
+  
+}
+
